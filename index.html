@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">+
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Lemon &amp; Nacho Co. | Room Sprays</title>
+  <title>Lemon & Nacho Co. | Room Sprays</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
@@ -11,16 +11,133 @@
       margin: 0;
       font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
       color: #222;
-      /* Gradient from bottom left (#7132a8) to top right (#f2e141) */
       background: linear-gradient(135deg, #7132a8 0%, #f2e141 100%);
+    }
+    .header {
+      background: linear-gradient(135deg, #7132a8 0%, #f2e141 100%);
+      padding: 24px 0 16px 0;
+      box-shadow: 0 2px 8px rgba(50, 20, 70, 0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(50, 20, 70, 0.10);
+      border: 3px solid #fff5;
+      background: #fff3;
+    }
+    .brand h1 {
+      margin: 10px 0 0 0;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 2px 8px #7132a855;
+    }
+    .tagline {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #f2e141;
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 4px #7132a855;
+    }
+    nav ul {
+      margin: 14px 0 0 0;
+      padding: 0;
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #f2e141;
+    }
+
+    .scents-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .scent-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(113, 50, 168, 0.13);
+      width: 220px;
+      padding: 18px 16px 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1.5px solid #f2e14144;
+    }
+    .scent-card:hover {
+      box-shadow: 0 8px 32px rgba(113, 50, 168, 0.25);
+      transform: translateY(-4px) scale(1.03);
+    }
+    .scent-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px #eee5;
+      margin-bottom: 12px;
+    }
+    .scent-card h3 {
+      margin: 10px 0 7px 0;
+      color: #7132a8;
+      font-size: 1.15rem;
+    }
+    .scent-card p {
+      margin: 0;
+      font-size: 0.96rem;
+      color: #444;
+      text-align: center;
+    }
+    .scents-section h2 {
+      text-align: center;
+      margin-top: 32px;
+      color: #7132a8;
+      text-shadow: 0 1px 8px #f2e14133;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 700px) {
+      .scents-list {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+      .header {
+        padding: 18px 0 12px 0;
+      }
+      .scent-card {
+        width: 88vw;
+        max-width: 320px;
+      }
     }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="brand">
-      <img src="images/images.png" alt="Lemon &amp; Nacho Co. company logo" class="logo">
-      <h1>Lemon &amp; Nacho Co.</h1>
+      <img src="images/images.png" alt="Lemon & Nacho Co. Logo" class="logo">
+      <h1>Lemon & Nacho Co.</h1>
       <p class="tagline">Elevate Your Space</p>
     </div>
     <nav>
@@ -31,58 +148,56 @@
       </ul>
     </nav>
   </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Discover the Art of Scent</h2>
+      <p>Transform every room into a sanctuary with our luxurious room sprays.</p>
+    </div>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Discover the Art of Scent</h2>
-        <p>Transform every room into a sanctuary with our luxurious room sprays.</p>
+  <section id="scents" class="scents-section">
+    <h2>Our Signature Scents</h2>
+    <div class="scents-list">
+      <div class="scent-card lavender">
+        <img src="images/cuddlepowder.jpg" alt="French Lavender">
+        <h3>French Lavender</h3>
+        <p>Soothing & floral, inspired by the lavender fields of Provence.</p>
       </div>
-    </section>
-
-    <section id="scents" class="scents-section">
-      <h2>Our Signature Scents</h2>
-      <div class="scents-list">
-        <div class="scent-card lavender">
-          <img src="images/cuddlepowder.jpg" alt="French Lavender">
-          <h3>French Lavender</h3>
-          <p>Soothing &amp; floral, inspired by the lavender fields of Provence.</p>
-        </div>
-        <div class="scent-card bamboo">
-          <img src="images/freshlinen.jpg" alt="Fresh Bamboo">
-          <h3>Fresh Bamboo</h3>
-          <p>Crisp, green notes for a refreshing, nature-inspired ambiance.</p>
-        </div>
-        <div class="scent-card serenity">
-          <img src="images/serenity.jpg" alt="Serenity Hotel Vibe">
-          <h3>Serenity (Hotel Vibe)</h3>
-          <p>Elegant and calming, reminiscent of a luxury hotel retreat.</p>
-        </div>
-        <div class="scent-card cuddle">
-          <img src="images/freshlinen.jpg" alt="Cuddle Scent">
-          <h3>Cuddle Scent</h3>
-          <p>Warm, cozy, and comforting — perfect for relaxing moments.</p>
-        </div>
+      <div class="scent-card bamboo">
+        <img src="images/freshlinen.jpg" alt="Fresh Bamboo">
+        <h3>Fresh Bamboo</h3>
+        <p>Crisp, green notes for a refreshing, nature-inspired ambiance.</p>
       </div>
-    </section>
+      <div class="scent-card serenity">
+        <img src="images/serenity.jpg" alt="Serenity Hotel Vibe">
+        <h3>Serenity (Hotel Vibe)</h3>
+        <p>Elegant and calming, reminiscent of a luxury hotel retreat.</p>
+      </div>
+      <div class="scent-card cuddle">
+        <img src="images/freshlinen.jpg" alt="Cuddle Scent">
+        <h3>Cuddle Scent</h3>
+        <p>Warm, cozy, and comforting — perfect for relaxing moments.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="about-section">
-      <h2>About Lemon &amp; Nacho Co.</h2>
-      <p>
-        At Lemon &amp; Nacho Co., we believe your space should feel extraordinary. Our premium room sprays blend nature-inspired scents with an elegant design, bringing a touch of luxury and comfort to your everyday moments. Crafted with care, our signature scents are made to uplift, relax, and transform your environment.
-      </p>
-    </section>
+  <section id="about" class="about-section">
+    <h2>About Lemon & Nacho Co.</h2>
+    <p>
+      At Lemon & Nacho Co., we believe your space should feel extraordinary. Our premium room sprays blend nature-inspired scents with an elegant design, bringing a touch of luxury and comfort to your everyday moments. Crafted with care, our signature scents are made to uplift, relax, and transform your environment.
+    </p>
+  </section>
 
-    <section id="contact" class="contact-section">
-      <h2>Contact Us</h2>
-      <p>Contact: 09690102700</p>
-      <p>Email: <a href="mailto:hello@lemonnachoco.com">hello@lemonnachoco.com</a></p>
-      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61574998436223" target="_blank" rel="noopener">@lemonnachoco</a></p>
-    </section>
-  </main>
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Contact: 09690102700</p>
+    <p>Email: <a href="mailto:hello@lemonnachoco.com">hello@lemonnachoco.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61574998436223" target="_blank">@lemonnachoco</a></p>
+  </section>
 
   <footer class="footer">
-    <p>&copy; 2025 Lemon &amp; Nacho Co. | Designed with elegance and care.</p>
+    <p>&copy; 2025 Lemon & Nacho Co. | Designed with elegance and care.</p>
   </footer>
 </body>
 </html>
