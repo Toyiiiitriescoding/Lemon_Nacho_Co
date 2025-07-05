@@ -19,6 +19,20 @@
             padding: 20px;
             text-align: center;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .site-logo {
+            height: 56px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            background: #fff3;
+        }
         h1 {
             margin: 0;
         }
@@ -54,7 +68,10 @@
 <body>
 
 <header>
-    <h1>Lemon & Nacho Co.</h1>
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Lemon Nacho Co Logo" class="site-logo">
+        <h1>Lemon & Nacho Co.</h1>
+    </div>
     <p>🌿✨ Cozy Up This Long Rainy Weekend with Our Signature Room Sprays ✨🌿</p>
 </header>
 
