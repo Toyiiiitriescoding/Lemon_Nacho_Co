@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Lemon & Nacho Co. | Room Sprays</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Existing styles remain unchanged */
+    /* Add styles for the button */
+    .add-to-cart {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .add-to-cart:hover {
+      background-color: #5e2a8c;
+    }
+
+    /* My Cart Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .modal-content {
+      background: var(--glass-bg);
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #f2e141;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: var(--white);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checkout-form input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .checkout-form button {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .checkout-form button:hover {
+      background-color: #5e2a8c;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="images/logo.png" alt="Lemon & Nacho Co. Logo" class="logo">
+      <h1>Lemon & Nacho Co.</h1>
+      <p class="tagline">Elevate Your Space</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#scents">Scents</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="myCartBtn">My Cart (0)</button></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Discover the Art of Scent</h2>
+      <p>Transform every room into a sanctuary with our luxurious room sprays.</p>
+    </div>
+  </section>
+
+  <section id="scents" class="scents-section">
+    <h2>Our Signature Scents</h2>
+    <div class="scents-list">
+      <div class="scent-card lavender">
+        <img src="images/serenity.jpg" alt="French Lavender">
+        <h3>French Lavender</h3>
+        <p>Soothing & floral, inspired by the lavender fields of Provence.</p>
+        <input type="number" min="1" value="1" id="lavenderQty" />
+        <button class="add-to-cart" onclick="addToCart('French Lavender', document.getElementById('lavenderQty').value)">Add to Cart</button>
+      </div>
+      <div class="scent-card bamboo">
+        <img src="images/freshlinen.jpg" alt="Fresh Bamboo">
+        <h3>Fresh Bamboo</h3>
+        <p>Crisp, green notes for a refreshing, nature-inspired ambiance.</p>
+        <input type="number" min="1" value="1" id="bambooQty" />
+        <button class="add-to-cart" onclick="addToCart('Fresh Bamboo', document.getElementById('bambooQty').value)">Add to Cart</button>
+      </div>
+      <div class="scent-card serenity">
+        <img src="images/serenity.jpg" alt="Serenity Hotel Vibe">
+        <h3>Serenity (Hotel Vibe)</h3>
+        <p>Elegant and calming, reminiscent of a luxury hotel retreat.</p>
+        <input type="number" min="1" value="1" id="serenityQty" />
+        <button class="add-to-cart" onclick="addToCart('Serenity', document.getElementById('serenityQty').value)">Add to Cart</button>
+      </div>
+      <div class="scent-card cuddle">
+        <img src="images/freshlinen.jpg" alt="Cuddle Scent">
+        <h3>Cuddle Scent</h3>
+        <p>Warm, cozy, and comforting — perfect for relaxing moments.</p>
+        <input type="number" min="1" value="1" id="cuddleQty" />
+        <button class="add-to-cart" onclick="addToCart('Cuddle Scent', document.getElementById('cuddleQty').value)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>About Lemon & Nacho Co.</h2>
+    <p>
+      At Lemon & Nacho Co., we believe your space should feel extraordinary. Our premium room sprays blend nature-inspired scents with an elegant design, bringing a touch of luxury and comfort to your everyday moments. Crafted with care, our signature scents are made to uplift, relax, and transform your environment.
+    </p>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Phone: <a href="tel:09690102700">09690102700</a></p>
+    <p>Email: <a href="mailto:jhiara.diaz@lemonnachoco.com">jhiara.diaz@lemonnachoco.com</a></p>
+    <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61574998436223" target="_blank" rel="noopener">@lemonnachoco</a></p>
+    <p>Mailing: <a href="https://www.google.com/maps/place/Soliven+corner+Cairo+Apartments/@14.6071124,121.0946726,21z/data=!4m10!1m2!2m1!1s001+soliven+cairo+st.+greenpark+village,+Pasig+city!3m6!1s0x3397b945e3117fd7:0xb1bbaeefa6cd6fc!8m2!3d14.6070761!4d121.0948602!15sCjMwMDEgc29saXZlbiBjYWlybyBzdC4gZ3JlZW5wYXJrIHZpbGxhZ2UsIFBhc2lnIGNpdHmSARJhcGFydG1lbnRfYnVpbGRpbmeqAYUBEAEqKSIlY2Fpcm8gc3QgZ3JlZW5wYXJrIHZpbGxhZ2UgcGFzaWcgY2l0eSgAMh8QASIbMthORdYz6XsxQ_Ef_Jcubx2EZYD8fvJ5UPN1MjUQAiIxMDAxIHNvbGl2ZW4gY2Fpcm8gc3QgZ3JlZW5wYXJrIHZpbGxhZ2UgcGFzaWcgY2l0eeABAA!16s%2Fg%2F11s4fmvhxx?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D">001 Soliven Cairo st. Greenpark Village, Pasig City</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Lemon & Nacho Co. | Designed with elegance and care.</p>
+  </footer>
+
+  <!-- My Cart Modal -->
+  <div id="myCartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>My Cart</h2>
+      <div id="cartItems"></div>
+      <h3>Total: <span id="totalPrice">0</span></h3>
+      <button onclick="openCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Form Modal -->
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCheckoutModal()">&times;</span>
+      <h2>Checkout</h2>
+      <form class="checkout-form" onsubmit="sendOrder(event)">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="text" id="contactNumber" placeholder="Contact Number" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="address" placeholder="Delivery Address" required>
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(scent, quantity) {
+      quantity = parseInt(quantity);
+      const existingItem = cart.find(item => item.scent === scent);
+      if (existingItem) {
+        existingItem.quantity += quantity;
+      } else {
+        cart.push({ scent, quantity });
+      }
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsDiv = document.getElementById('cartItems');
+      cartItemsDiv.innerHTML = '';
+      total = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.quantity * 10; // Assuming each scent costs $10
+        total += itemTotal;
+        cartItemsDiv.innerHTML += `<p>${item.scent} - Quantity: ${item.quantity} - Total: $${itemTotal}</p>`;
+      });
+
+      document.getElementById('totalPrice').innerText = total;
+      document.getElementById('myCartBtn').innerText = `My Cart (${cart.length})`;
+    }
+
+    document.getElementById('myCartBtn').onclick = function() {
+      document.getElementById('myCartModal').style.display = 'block';
+    };
+
+    function closeModal() {
+      document.getElementById('myCartModal').style.display = 'none';
+    }
+
+    function openCheckout() {
+      closeModal();
+      document.getElementById('checkoutModal').style.display = 'block';
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').style.display = 'none';
+    }
+
+    function sendOrder(event) {
+      event.preventDefault();
+      const fullName = document.getElementById('fullName').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+
+      const orderDetails = `Order Details:\n${cart.map(item => `${item.scent} - Quantity: ${item.quantity}`).join('\n')}\nTotal: $${total}\n\nCustomer Details:\nFull Name: ${fullName}\nContact Number: ${contactNumber}\nEmail: ${email}\nAddress: ${address}`;
+      
+      // Simulate sending email (this would typically be done via a backend service)
+      alert("Order submitted! Details:\n" + orderDetails);
+      
+      // Reset cart and close modal
+      cart = [];
+      updateCart();
+      closeCheckoutModal();
+      closeModal();
+    }
+  </script>
+</body>
+</html>
