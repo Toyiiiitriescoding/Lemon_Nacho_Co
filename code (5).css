@@ -1,0 +1,208 @@
+:root {
+  --primary: #7132a8;
+  --accent: #f2e141;
+  --white: #fff;
+  --card-bg: rgba(255,255,255,0.92);
+  --glass-bg: rgba(255,255,255,0.3);
+  --shadow: 0 8px 32px rgba(113,50,168,0.15);
+  --header-gradient: linear-gradient(135deg, #7132a8 0%, #f2e141 100%);
+  --section-bg: linear-gradient(120deg, #fcf6ff 0%, #fffde0 100%);
+  --radius: 1.6rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  color: #222;
+  background: linear-gradient(135deg, #7132a8 0%, #f2e141 100%);
+  background-attachment: fixed;
+  line-height: 1.7;
+}
+.header {
+  background: var(--header-gradient);
+  padding: 1.5rem 0; /* Adjusted for mobile */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo {
+  width: 80px; /* Adjusted for mobile */
+  height: 80px; /* Adjusted for mobile */
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 32px #7132a833, 0 0 0 4px #fff4;
+  background: var(--glass-bg);
+  border: 2px solid #fff6;
+  margin-bottom: 0.3rem;
+  backdrop-filter: blur(6px);
+}
+.brand h1 {
+  margin: 0 0 0.1rem 0;
+  font-size: 1.8rem; /* Adjusted for mobile */
+  color: var(--white);
+  font-weight: 800;
+}
+.tagline {
+  margin: 0;
+  font-size: 1rem; /* Adjusted for mobile */
+  color: var(--accent);
+}
+nav ul {
+  margin: 1rem 0 0 0; /* Adjusted for mobile */
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  gap: 1rem; /* Space between items */
+  list-style: none;
+}
+nav a, nav button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem; /* Adjusted for mobile */
+  padding: 0.5rem 1rem; /* Adjusted for mobile */
+  border-radius: 28px;
+  transition: color 0.2s, background 0.2s;
+  background: var(--primary);
+  border: none;
+}
+nav a:hover, nav a:focus, nav button:hover {
+  background: #f2e141cc;
+}
+
+.hero {
+  background: var(--section-bg);
+  border-radius: var(--radius);
+  margin: 2rem auto; /* Adjusted for mobile */
+  max-width: 700px;
+  padding: 2rem 1rem; /* Adjusted for mobile */
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.hero h2 {
+  font-size: 1.8rem; /* Adjusted for mobile */
+  color: var(--primary);
+}
+.hero p {
+  font-size: 1rem; /* Adjusted for mobile */
+}
+
+/* Section backgrounds */
+.scents-section, .about-section, .contact-section {
+  background: var(--section-bg);
+  margin: 2rem auto; /* Adjusted for mobile */
+  border-radius: var(--radius);
+  max-width: 90%; /* Responsive width */
+  box-shadow: var(--shadow);
+  padding: 2rem 1rem; /* Adjusted for mobile */
+}
+.scents-section h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.5rem; /* Adjusted for mobile */
+}
+.scents-list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  gap: 1.5rem; /* Space between items */
+  margin-top: 1rem; /* Adjusted for mobile */
+}
+.scent-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px #7132a81a;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.18s, transform 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.scent-card img {
+  width: 100px; /* Adjusted for mobile */
+  height: 100px; /* Adjusted for mobile */
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+.scent-card h3 {
+  margin: 0.5rem 0;
+  color: var(--primary);
+  font-size: 1.2rem; /* Adjusted for mobile */
+}
+.scent-card p {
+  margin: 0;
+  font-size: 0.9rem; /* Adjusted for mobile */
+  text-align: center;
+}
+.scent-details {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.scent-details.active {
+  display: flex; /* Show when active */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+  background: var(--glass-bg);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #f2e141;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+}
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkout-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.checkout-form button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 10
